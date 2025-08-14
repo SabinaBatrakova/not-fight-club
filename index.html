@@ -5,9 +5,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>not-fight-club</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+    <header>
+        <div class="container">
+            <nav class="wrapper-menu">
+                <ul class="menu-left">
+                    <li><button>MENU</button></li>
+                </ul>
+                <ul class="menu-right">
+                    <li><button class="fa-solid fa-house"></button></li>
+                    <li><button class="fa-solid fa-user"></button></li>
+                    <li><button class="fa-solid fa-gear"></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="begin-game">
+            <button class="button-fight">FIGHT!</button>
+        </section>
+    </div>
+
+    <section class="section-registration">
+        <div class="container">
+            <div class="name-input">
+                <label for="player-name">ENTER NAME:</label>
+                <input type="text" id="player-name" class="input-name" placeholder="YOUR NAME">
+                <button class="button__save-name" onclick="saveName()">SAVE</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-character">
+        <div class="container">
+            <div class="wrapper__character">
+                <div class="wrapper-left">
+                    <img src="./assets/characterOne.gif" width="475px" height="375px" alt="image character">
+                </div>
+
+                <div class="wrapper-left">
+                    <h2 class="name">Name: </h2>
+                    <p class="wins-count">Wins: </p>
+                    <p class="loses-count">Loses: </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-game">
+        <div class="container">
+            <div class="wrapper__game">
+                <div class="game__character-one">
+                    <div class="game__character-left">
+                        <h2 class="name">Name: </h2>
+                        <img src="./assets/characterOne.gif" width="475px" height="375px" alt="image character">
+                        <p>150/150</p>
+                    </div>
+                    <div class="game__character-right">
+                        <h2>Please pick 1 Attack zone and 2 Defence zones</h2>
+
+                        <div class="">
+                            <h3 class="">ATTACK ZONE</h3>
+                            <label>
+                                <input type="radio" name="" value="1" checked>
+                                HEAD
+                            </label>
+                            <label>
+                                <input type="radio" name="" value="2">
+                                NECK
+                            </label>
+                            <label>
+                                <input type="radio" name="" value="3">
+                                BODY
+                            </label>
+                            <label>
+                                <input type="radio" name="" value="4">
+                                BELLY
+                            </label>
+                            <label>
+                                <input type="radio" name="" value="5">
+                                LEGS
+                            </label>
+                        </div>
+
+                        <div class="line-zone"></div>
+                        <div class="">
+                            <h3 class="">DEFENCE ZONE</h3>
+                            <label>
+                                <input type="radio" name="" value="1" checked>
+                                HEAD
+                            </label>
+                            <label>
+                                <input type="radio" name="" value="2">
+                                NECK
+                            </label>
+                            <label>
+                                <input type="radio" name="" value="3">
+                                BODY
+                            </label>
+                            <label>
+                                <input type="radio" name="" value="4">
+                                BELLY
+                            </label>
+                            <label>
+                                <input type="radio" name="" value="5">
+                                LEGS
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game__character-two">
+                    <div class="game__character-left">
+                        <h2 class="name">Name: </h2>
+                        <img src="./assets/characterThree.gif" width="475px" height="375px" alt="image character">
+                        <p>130/150</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-line"></div>
+        <div class="game-discription">
+            <p>First character: </p>
+            <p>Second character: </p>
+        </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <script src="index.js"></script>
 
 </body>
 

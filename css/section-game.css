@@ -1,0 +1,50 @@
+.section-game {
+    margin: 150px;
+}
+
+.wrapper__game {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+    gap: 30px;
+}
+
+.game__character-one {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.game__character-two {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+.game__character-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game__character-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.name {}
+
+.wins-count {}
+
+.loses-count {}
+
+.game-line {
+    border: 3px solid gold;
+    width: 1340px;
+}
+
+.line-zone {
+    border-left: 3px solid gold;
+    height: 250px;
+}
