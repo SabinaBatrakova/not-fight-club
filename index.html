@@ -25,14 +25,7 @@
             </nav>
         </div>
     </header>
-
-    <div class="container">
-        <section class="begin-game">
-            <button class="button-fight">FIGHT!</button>
-        </section>
-    </div>
-
-    <section class="section-registration">
+    <section class="section-registration hidden">
         <div class="container">
             <div class="name-input">
                 <label for="player-name">ENTER NAME:</label>
@@ -42,7 +35,15 @@
         </div>
     </section>
 
-    <section class="section-character">
+
+    <section class="begin-game hidden">
+        <div class="container">
+            <button class="button-fight">FIGHT!</button>
+        </div>
+    </section>
+
+
+    <section class="section-character hidden">
         <div class="container">
             <div class="wrapper__character">
                 <div class="wrapper-left">
@@ -58,7 +59,7 @@
         </div>
     </section>
 
-    <section class="section-game">
+    <section class="section-game hidden">
         <div class="container">
             <div class="wrapper__game">
                 <div class="game__character-one">
@@ -67,63 +68,65 @@
                         <img src="./assets/characterOne.gif" width="475px" height="375px" alt="image character">
                         <p>150/150</p>
                     </div>
-                    <div class="game__character-right">
-                        <h2>Please pick 1 Attack zone and 2 Defence zones</h2>
 
-                        <div class="">
-                            <h3 class="">ATTACK ZONE</h3>
-                            <label>
-                                <input type="radio" name="" value="1" checked>
-                                HEAD
-                            </label>
-                            <label>
-                                <input type="radio" name="" value="2">
-                                NECK
-                            </label>
-                            <label>
-                                <input type="radio" name="" value="3">
-                                BODY
-                            </label>
-                            <label>
-                                <input type="radio" name="" value="4">
-                                BELLY
-                            </label>
-                            <label>
-                                <input type="radio" name="" value="5">
-                                LEGS
-                            </label>
-                        </div>
+                    <div class="game__actions-right">
+                        <h2 class="game__task-text">Please pick 1 Attack zone and 2 Defence zones</h2>
+                        <div class="wrapper-actions-character">
+                            <div class="game__attack-choice">
+                                <h3 class="">ATTACK ZONE</h3>
+                                <label>HEAD
+                                    <input type="radio" name="attack-zone" value="1" checked>
+                                </label>
+                                <label>
+                                    NECK
+                                    <input type="radio" name="attack-zone" value="2">
+                                </label>
+                                <label>
+                                    BODY
+                                    <input type="radio" name="attack-zone" value="3">
+                                </label>
+                                <label>
+                                    BELLY
+                                    <input type="radio" name="attack-zone" value="4">
+                                </label>
+                                <label>
+                                    LEGS
+                                    <input type="radio" name="attack-zone" value="5">
+                                </label>
+                            </div>
 
-                        <div class="line-zone"></div>
-                        <div class="">
-                            <h3 class="">DEFENCE ZONE</h3>
-                            <label>
-                                <input type="radio" name="" value="1" checked>
-                                HEAD
-                            </label>
-                            <label>
-                                <input type="radio" name="" value="2">
-                                NECK
-                            </label>
-                            <label>
-                                <input type="radio" name="" value="3">
-                                BODY
-                            </label>
-                            <label>
-                                <input type="radio" name="" value="4">
-                                BELLY
-                            </label>
-                            <label>
-                                <input type="radio" name="" value="5">
-                                LEGS
-                            </label>
+                            <div class="line-zone"></div>
+                            <div class="game__defence-choice">
+                                <h3 class="">DEFENCE ZONE</h3>
+                                <label>
+                                    <input type="checkbox" name="defence-zone" value="1" checked>
+                                    HEAD
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="defence-zone" value="2">
+                                    NECK
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="defence-zone" value="3">
+                                    BODY
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="defence-zone" value="4">
+                                    BELLY
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="defence-zone" value="5">
+                                    LEGS
+                                </label>
+                                <button class="button__game-attack">ATTACK!</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="game__character-two">
                     <div class="game__character-left">
-                        <h2 class="name">Name: </h2>
+                        <h2>Name: Mister </h2>
                         <img src="./assets/characterThree.gif" width="475px" height="375px" alt="image character">
                         <p>130/150</p>
                     </div>
@@ -132,19 +135,17 @@
         </div>
 
         <div class="game-line"></div>
-        <div class="game-discription">
-            <p>First character: </p>
-            <p>Second character: </p>
+        <div class="container">
+            <div class="game-discription">
+                <p>First character: </p>
+                <p>Second character: </p>
+            </div>
         </div>
-
-
         </div>
-
-
     </section>
 
-
     <script src="index.js"></script>
+    <script src="game.js"></script>
 
 </body>
 
