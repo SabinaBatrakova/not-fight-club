@@ -81,4 +81,6 @@
 .name-computer {
     font-size: 24px;
     color: gold;
+    text-transform: uppercase;
+
 }

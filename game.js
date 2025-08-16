@@ -1,5 +1,5 @@
 const checkboxDefenceZone = document.querySelectorAll('input[name="defence-zone"]');
-const input =document.getElementById('player-name');
+const input = document.getElementById('player-name');
 const attackButton = document.querySelector('.button__game-attack');
 const gameDescription = document.querySelector('.game-discription')
 
@@ -33,17 +33,30 @@ if (checked.length >2) {
 })
 
 attackButton.addEventListener('click', () => {
-    const attackChoice = document.querySelector('input[name="attack-zone"]:checked').value;
-    const defenceChoice = Array.from(document.querySelectorAll('input[name="defence-zone"]:checked')).map(checkbox => checkbox.value);
+    const zonesCharacter = ['HEAD', 'NECK', 'BODY', 'BELLY', 'LEGS'];
+    const defenceChoice = Array.from(document.querySelectorAll('input[name="defence-zone"]:checked')).map(checkbox => zonesCharacter[parseInt(checkbox.value)-1]);
 
-    const characterChoice = {
+    if (defenceChoice.length !==2) {
+        alert('Выберите ровно 2 зоны защиты!');
+        return;
+    }
+
+    const selectedAttack = document.querySelector('input[name="attack-zone"]:checked');
+    const attackChoice = selectedAttack ? zonesCharacter[parseInt(selectedAttack.value)-1] : undefined;
+
+if (!attackChoice) {
+      alert('Выберите зону атаки!');
+    return;
+}
+
+     const characterChoice = {
         attack: attackChoice,
         defence: defenceChoice
     };
 
     //alert('choice character: ' + JSON.stringify(characterChoice));
 
-    const zones = ['1','2','3','4','5'];
+    const zones = ['HEAD', 'NECK', 'BODY', 'BELLY', 'LEGS'];
     const randomIndexAttack = Math.floor(Math.random()*zones.length);
     const randomAttack = zones[randomIndexAttack];
 
@@ -76,14 +89,14 @@ document.querySelector('.character-two-hp').textContent = `${totalPointsComputer
 
 const characterName = localStorage.getItem('player-name') || 'Player';
 const allGames = `
-        <p>${characterName} attack: ${attackChoice}, defence: ${defenceChoice.join(', ')}, HP: ${totalPointsCharacter}</p>
-        <p>Computer attack: ${randomAttack}, defence: ${randomDefence.join(', ')}, HP: ${totalPointsComputer}</p>
+        <p>${characterName} attack: ${attackChoice}, defence: ${defenceChoice.join(', ')}. HP => ${totalPointsCharacter}</p>
+        <p>Computer attack: ${randomAttack}, defence: ${randomDefence.join(', ')}. HP => ${totalPointsComputer}</p>
         <hr>
     `;
 
     gameDescription.innerHTML += allGames;
 
-  if (totalPointsCharacter <= 0) {
+    if (totalPointsCharacter <= 0) {
         gameDescription.innerHTML += `<p>Game Over! The computer wins!</p>`;
     } else if (totalPointsComputer <= 0) {
         gameDescription.innerHTML += `<p> Congratulations! You win!</p>`;
@@ -92,10 +105,65 @@ const allGames = `
 console.log("HP игрока:", totalPointsCharacter);
     console.log("HP компьютера:", totalPointsComputer);
 
+});
+
+
+
+const buttonSaveCharacter = document.querySelector('.button__save-character');
+const buttonChoiceCharacter = document.querySelector('.button-choice-character');
+const slideCharacterAll =document.querySelectorAll('.character-slide')
+
+let currentIndex = 0;
+
+function hiddenAllCharacter() {
+slideCharacterAll.forEach(img =>img.style.display = 'none')
+}
+
+function showSlide(index) {
+    hiddenAllCharacter()
+    slideCharacterAll[index].style.display = 'block';
+    currentIndex = index;
+}
+
+const savedCharacter = localStorage.getItem('selectedCharacter');
+    if (savedCharacter) {
+       slideCharacterAll.forEach((slide, index) => {
+        if (slide.querySelector('img').src === savedCharacter) {
+            showSlide(index);
+        }
+       })
+    } else {
+        const randomCharacter = Math.floor(Math.random() * slideCharacterAll.length);
+        showSlide(randomCharacter)
+}
+
+buttonChoiceCharacter.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * slideCharacterAll.length);
+    showSlide(randomIndex);
+   
 })
 
+buttonSaveCharacter.addEventListener('click', () => {
+    const choiceImage = slideCharacterAll[currentIndex].querySelector('img').src;
+     localStorage.setItem('selectedCharacter', choiceImage);
 
+     const characterImage = document.querySelector('.game__character-one img');
+     if (characterImage) characterImage.src = choiceImage;
 
+     hideAllsections();
+    registrationSection.classList.add("hidden");
+    beginGame.classList.remove("hidden");
+});
 
+window.addEventListener('DOMContentLoaded', () => {
+    const savedCharacter = localStorage.getItem('selectedCharacter');
+  
+    if (savedCharacter) {
+        const characterImage =document.querySelector('.game__character-one img');
+        if (characterImage) characterImage.src = savedCharacter;
+    }
+    
+})
+    
 
 

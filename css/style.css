@@ -88,7 +88,9 @@ nav li {
     gap: 30px;
 }
 
-.button__save-name {
+.button__save-name,
+.button__save-character,
+.button-choice-character {
     background: #605f5f;
     border: none;
     border-radius: 20px;
@@ -97,15 +99,16 @@ nav li {
     cursor: pointer;
     padding: 15px 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
 }
 
-.button__save-name:hover {
+.button__save-name,
+.button__save-character,
+.button-choice-character:hover {
     color: rgb(30, 223, 107);
 }
 
-
 .section-registration {
-
     margin: 150px;
 }
 
@@ -115,9 +118,7 @@ nav li {
     font-size: 20px;
 }
 
-
 .section-character {
-
     margin: 150px;
 }
 
