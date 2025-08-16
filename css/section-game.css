@@ -1,44 +1,46 @@
 .section-game {
-    margin: 150px;
-
+    margin: 90px;
 }
 
 .wrapper__game {
     display: flex;
     flex-direction: row;
-    margin-bottom: 100px;
-    gap: 10px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.wrapper__game img {
+    width: 100%;
+    max-width: 475px;
+    height: auto;
+    aspect-ratio: 350 / 375;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 .game__character-one {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 30px;
+    width: 100%;
 }
 
 .game__character-two {
     display: flex;
     flex-direction: row-reverse;
-    gap: 20px;
-}
-
-.game__character-left {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    width: 56%;
 }
 
 .wrapper-actions-character {
     display: flex;
     flex-direction: row;
     gap: 30px;
+    font-size: 22px;
 }
 
 .game__task-text {
     margin-bottom: 60px;
 }
-
 
 .game-line {
     border: 3px solid gold;
@@ -55,6 +57,7 @@
     flex-direction: column;
     align-items: end;
     gap: 20px;
+    text-align: end;
 }
 
 .game__defence-choice {
@@ -82,5 +85,73 @@
     font-size: 24px;
     color: gold;
     text-transform: uppercase;
+    margin-bottom: 20px;
+}
 
+
+@media (max-width: 1024px) {
+    .section-game {
+        margin: 50px;
+    }
+
+    .wrapper__game {
+        flex-direction: column;
+        align-items: start;
+        margin-bottom: 10px;
+    }
+
+    .wrapper-actions-character {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .wrapper__game img {
+        width: 70%;
+        aspect-ratio: 250 / 275;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .wrapper-actions-character {
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .game__character-one {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        width: 70%;
+    }
+
+    .game__task-text {
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+
+    .game-discription {
+        font-size: 18px;
+    }
+
+    .character-one-hp,
+    .character-two-hp {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .section-game {
+        margin: 20px;
+    }
+
+    .wrapper-actions-character {
+        display: flex;
+        flex-direction: row;
+        font-size: 10px;
+        margin-bottom: 00px;
+    }
 }
